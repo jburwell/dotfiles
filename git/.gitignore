@@ -1,0 +1,13 @@
+*.pyc
+*.swp
+.DS_Store
+.#*
+*/*/.project
+**/.classpath
+**/.settings/*
+.rebar
+\#*\#
+*.iml
+.idea
+*.swo
+*.swp
