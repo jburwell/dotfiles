@@ -13,4 +13,8 @@ alias ll='ls -alFG'
 
 ZSH_TMUX_ITERM2=true
 
+# TODO Move to a custom oh-my-zsh plugin
+# Intellij configuration
+export IDEA_JDK=$(/usr/libexec/java_home -v 1.8)
+
 plugins+=(brew osx)
