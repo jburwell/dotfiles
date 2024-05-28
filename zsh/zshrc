@@ -1,0 +1,32 @@
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+ZSH_THEME="robbyrussell"
+
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOCONNECT=false
+
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' frequency 13
+
+plugins=(asdf git ansible brew direnv emacs starship iterm2 tmux tmuxinator kubectl multipass vim-interaction fzf vi-mode ripgrep emacs 1password microk8s macos gcloud)  
+
+source $ZSH/oh-my-zsh.sh
+
+CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+else
+   export EDITOR='nvim'
+   alias vim="nvim"
+fi
+
+PAGER="less"
+PATH="/opt/homebrew/opt/grep/libexec/gnubin:${KREW_ROOT:-$HOME/.krew}/bin:$PATH:$CONFIG_HOME/emacs/bin"
+
+alias ls="lsd"
+alias cat="bat"
+
+source "$CONFIG_HOME/asdf-direnv/zshrc"
