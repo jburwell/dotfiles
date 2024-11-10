@@ -1,0 +1,42 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+command_timeout = 5000
+
+[character] 
+success_symbol = '[➜](bold green) '
+error_symbol = '[✗](bold red) '
+
+[cmd_duration]
+disabled = true
+
+[directory]
+truncation_length = 5
+truncation_symbol = '…/'
+
+[direnv]
+disabled = false
+
+[kubernetes]
+disabled = false
+
+[git_status]
+conflicted = '🏳'
+ahead = '🏎💨 ${ahead_count}'
+behind = '😰 ${behind_count}'
+diverged = '🏎💨 ${ahead_count}/😰 ${behind_count}'
+up_to_date = '✓'
+untracked = '🤷'
+stashed = '📦'
+modified = '📝'
+staged = '[++\($count\)](green)'
+renamed = '👅'
+deleted = '🗑'
+
+[sudo]
+disabled = false
+style = 'bold green'
+symbol = '👩‍💻 '
+
+[time]
+disabled = false
+format = '\($time\)($style) '
