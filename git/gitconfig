@@ -1,0 +1,55 @@
+[user]
+  name = John Burwell
+  email = jburwell@deloitte.com
+#[credential]
+#  helper = osxkeychain
+[github]
+  user = jburwell
+[push]
+  default = current
+[color]
+  ui = true
+[core]
+  excludesfile = ~/.gitignore
+  pager = delta --line-numbers --dark
+[delta]
+  true-color = always
+  features = side-by-side line-numbers decorations
+  syntax-theme = Dracula
+  plus-style = syntax "#003800"
+  minus-style = syntax "#3f0001"
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
+  hunk-header-decoration-style = cyan box ul
+[delta "line-numbers"]
+  line-numbers-left-style = cyan
+  line-numbers-right-style = cyan
+  line-numbers-minus-style = 124
+  line-numbers-plus-style = 28
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+[difftool]
+  prompt = false
+[mergetool]
+  prompt = false
+[alias]
+  aliases = config --get-regexp alias
+  force-ci = "!git commit --amend --no-edit && git push -f"
+  # Borrowed from https://gist.github.com/gnarf/5406589
+  pr  = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+  pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
