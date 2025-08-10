@@ -49,7 +49,6 @@ set autoread
 set nobackup
 set nowritebackup
 
-set go+=a
 set rtp+=/opt/homebrew/opt/fzf
 
 autocmd FileType gitcommit setlocal spell textwidth=72
