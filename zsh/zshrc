@@ -13,7 +13,7 @@ ZSH_TMUX_AUTOCONNECT=false
 zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 zstyle ':omz:update' frequency 13
 
-plugins=(git ansible brew direnv emacs starship iterm2 tmux tmuxinator kubectl multipass vim-interaction fzf vi-mode 1password microk8s macos gcloud dotnet terraform ssh aws helm mise bun podman battery gitignore)
+plugins=(git ansible brew direnv emacs starship iterm2 tmux tmuxinator kubectl multipass vim-interaction fzf vi-mode 1password microk8s macos gcloud dotnet terraform ssh aws helm mise bun podman battery gitignore zoxide)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -32,6 +32,8 @@ PATH="/opt/homebrew/bin:/opt/homebrew/opt/grep/libexec/gnubin:/opt/homebrew/opt/
 
 alias ls="lsd"
 alias cat="bat"
+alias find="fd"
+alias cd="z"
 
 source "$CONFIG_HOME/asdf-direnv/zshrc"
 
